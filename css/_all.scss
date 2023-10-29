@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    outline: none;
+    font-family: sans-serif;
+}
+
+body {
+    height: 1100vh;
+}
+
+:root {
+    --web-color: rgb(151, 72, 12);
+    --white: #fff;
+    --darkBlack: rgba(0,0,0,.8);
+    --lightBlack: rgba(0,0,0,.6);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section {
+    max-width: 100%;
+    width: 100%;
+    min-height: 100vh;
+    padding: 80px 20px 0 20px;
+    @include center();
+}
+
+.container {
+    display: flex;
+    max-width: 1300px;
+    width: 100%;
+}

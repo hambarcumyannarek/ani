@@ -1,0 +1,327 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+  outline: none;
+  font-family: sans-serif;
+}
+
+body {
+  height: 1100vh;
+}
+
+:root {
+  --web-color: rgb(151, 72, 12);
+  --white: #fff;
+  --darkBlack: rgba(0,0,0,.8);
+  --lightBlack: rgba(0,0,0,.6);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.section {
+  max-width: 100%;
+  width: 100%;
+  min-height: 100vh;
+  padding: 80px 20px 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  max-width: 1300px;
+  width: 100%;
+}
+
+nav {
+  width: 100%;
+  padding: 30px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: var(--white);
+  transition: all 0.5s;
+}
+nav.active {
+  filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.1));
+}
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+nav .container .logo h3 {
+  font-size: 1.5em;
+  color: var(--web-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+nav .container .links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+nav .container .links li a {
+  font-size: 1.2em;
+  color: var(--lightBlack);
+  position: relative;
+  transition: all 0.5s;
+}
+nav .container .links li a:hover {
+  color: var(--web-color);
+}
+nav .container .links li a::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -3px;
+  height: 2px;
+  width: 0%;
+  background: var(--lightBlack);
+  transition: all 0.5s;
+}
+nav .container .links li a:hover:before {
+  width: 100%;
+  left: 0;
+  background: var(--web-color);
+}
+nav .container .navBtns {
+  display: none;
+}
+
+.responsiveMenu {
+  display: none;
+}
+
+@media screen and (max-width: 700px) {
+  nav .container .links {
+    gap: 25px;
+  }
+  nav .container .links li a {
+    font-size: 1.1em;
+  }
+}
+@media screen and (max-width: 550px) {
+  nav .container .links {
+    display: none;
+  }
+  nav .container .navBtns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  nav .container .navBtns i {
+    font-size: 1.5em;
+    color: var(--lightBlack);
+    cursor: pointer;
+  }
+  .responsiveMenu {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 11;
+    background: var(--white);
+    gap: 20px;
+    opacity: 0;
+    visibility: hidden;
+    left: -100%;
+    transition: all 0.5s;
+  }
+  .responsiveMenu.active {
+    opacity: 1;
+    visibility: visible;
+    left: 0;
+  }
+  .responsiveMenu .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    gap: 20px;
+  }
+  .responsiveMenu .top .logo h3 {
+    font-size: 1.5em;
+    color: var(--web-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+  .responsiveMenu .top .close {
+    font-size: 2em;
+    color: var(--lightBlack);
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+  .responsiveMenu .top .close:hover {
+    color: var(--web-color);
+    transform: rotate(180deg);
+  }
+  .responsiveMenu .links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    text-align: center;
+    height: 100%;
+  }
+  .responsiveMenu .links li a {
+    font-size: 1.4em;
+    color: var(--lightBlack);
+    transition: all 0.5s;
+  }
+  .responsiveMenu .links li a:hover {
+    color: var(--web-color);
+  }
+}
+#home {
+  background-image: url("../images/brMUcZtHFWsVYjpgGfVL.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+#home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+}
+#home .content {
+  max-width: 750px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  z-index: 1;
+  text-align: center;
+}
+#home .content h1 {
+  font-size: 2.5em;
+  color: var(--white);
+}
+#home .content p {
+  font-size: 1.1em;
+  color: var(--white);
+}
+
+#unesco .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 70px;
+}
+#unesco .container .title {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 750px;
+}
+#unesco .container .title h2 {
+  font-size: 2.3em;
+  color: var(--darkBlack);
+}
+#unesco .container .title p {
+  color: var(--lightBlack);
+  font-size: 1.1em;
+}
+#unesco .container .box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  padding: 80px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.1);
+}
+#unesco .container .box .img img {
+  width: 100%;
+  background-size: cover;
+}
+#unesco .container .box .content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+#unesco .container .box .content h3 {
+  font-size: 1.5em;
+  color: var(--darkBlack);
+}
+#unesco .container .box .content p {
+  font-size: 17px;
+  line-height: 28px;
+  color: var(--lightBlack);
+}
+
+@media screen and (max-width: 600px) {
+  #home .content h1 {
+    font-size: 6vw;
+  }
+  #home .content p {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: 900px;
+  }
+  #unesco .container .box {
+    grid-template-columns: 1fr;
+    grid-gap: 50px;
+    padding: 80px;
+  }
+  #unesco .container .box .content h3 {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 950px) {
+  .container {
+    max-width: 700px;
+  }
+  #unesco .container .box {
+    padding: 60px 20px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .container {
+    max-width: 400px;
+  }
+  #unesco .container .title h2 {
+    font-size: 6vw;
+  }
+  #unesco .container .box {
+    grid-gap: 30px;
+  }
+  #unesco .container .box .content h3 {
+    font-size: 1.5em;
+  }
+}/*# sourceMappingURL=style.css.map */
