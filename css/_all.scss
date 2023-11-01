@@ -9,13 +9,10 @@
     font-family: sans-serif;
 }
 
-body {
-    height: 1100vh;
-}
-
 :root {
-    --web-color: rgb(151, 72, 12);
+    --web-color: rgb(205,89,0);
     --white: #fff;
+    --light-white: rgb(222,222,222);
     --darkBlack: rgba(0,0,0,.8);
     --lightBlack: rgba(0,0,0,.6);
 }
@@ -42,4 +39,33 @@ html {
     display: flex;
     max-width: 1300px;
     width: 100%;
+
+    .title {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 750px;
+
+        h2 {
+            font-size: 2.3em;
+            color: var(--darkBlack);
+        }
+
+        p {
+            color: var(--lightBlack);
+            font-size: 1.1em;
+        }
+    }
+}
+
+
+@media screen and (max-width: 550px) {
+    .container {
+        .title {
+            h2 {
+                font-size: 6vw;
+            }
+        }
+    }
 }
